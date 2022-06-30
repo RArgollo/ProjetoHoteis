@@ -37,7 +37,4 @@ C:\Users\rafae\projetosDODEV\ProjetoHoteis\ProjetoHoteis.web\bin\Debug\net6.0\Ne
 C:\Users\rafae\projetosDODEV\ProjetoHoteis\ProjetoHoteis.web\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\rafae\projetosDODEV\ProjetoHoteis\ProjetoHoteis.web\bin\Debug\net6.0\Npgsql.dll
 C:\Users\rafae\projetosDODEV\ProjetoHoteis\ProjetoHoteis.web\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
-C:\Users\rafae\projetosDODEV\ProjetoHoteis\ProjetoHoteis.web\bin\Debug\net6.0\CaseExtensions.dll
 C:\Users\rafae\projetosDODEV\ProjetoHoteis\ProjetoHoteis.web\bin\Debug\net6.0\EFCore.NamingConventions.dll
-C:\Users\rafae\projetosDODEV\ProjetoHoteis\ProjetoHoteis.web\bin\Debug\net6.0\Marques.EFCorev3.0.SnakeCase.dll
-C:\Users\rafae\projetosDODEV\ProjetoHoteis\ProjetoHoteis.web\bin\Debug\net6.0\SnakeCase.JsonNet.dll

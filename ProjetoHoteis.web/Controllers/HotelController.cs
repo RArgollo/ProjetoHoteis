@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjetoHoteis.lib.Data.Repositorios;
 using ProjetoHoteis.lib.Models;
+using ProjetoHoteis.web.DTOs.RespostaHTTP;
+using System.Text.Json;
 
 namespace ProjetoHoteis.web.Controllers;
 
@@ -9,6 +11,7 @@ namespace ProjetoHoteis.web.Controllers;
 public class HotelController : ControllerBase
 {
     public readonly HotelRepositorio _repositorio;
+    
     public HotelController(HotelRepositorio repositorio)
     {
         _repositorio = repositorio;
@@ -38,5 +41,15 @@ public class HotelController : ControllerBase
     {
         _repositorio.Deletar(id);
         return Ok();
+    }
+
+    [HttpGet("CEP")]
+    public async Task<IActionResult> GetCEP(string cep)
+    {
+        var client = new HttpClient();
+        var response = await client.GetAsync($"https://viacep.com.br/ws/{cep}/json/");
+        var resposta = await response.Content.ReadAsStringAsync();
+        var respostaObjeto = JsonSerializer.Deserialize<ViaCepRespostaHttp>(resposta);
+        return Ok(resposta);
     }
 }

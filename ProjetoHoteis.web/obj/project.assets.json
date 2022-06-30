@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "CaseExtensions/1.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/CaseExtensions.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/CaseExtensions.dll": {}
-        }
-      },
       "EFCore.NamingConventions/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -23,19 +14,6 @@
         },
         "runtime": {
           "lib/net6.0/EFCore.NamingConventions.dll": {}
-        }
-      },
-      "Marques.EFCorev3.0.SnakeCase/1.0.13": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.0.0",
-          "Microsoft.EntityFrameworkCore.Relational": "3.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.1/Marques.EFCorev3.0.SnakeCase.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/Marques.EFCorev3.0.SnakeCase.dll": {}
         }
       },
       "Microsoft.AspNetCore.JsonPatch/6.0.6": {
@@ -318,18 +296,6 @@
           "lib/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
         }
       },
-      "SnakeCase.JsonNet/1.4.1": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/netcoreapp2.2/SnakeCase.JsonNet.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.2/SnakeCase.JsonNet.dll": {}
-        }
-      },
       "Swashbuckle.AspNetCore/6.2.3": {
         "type": "package",
         "dependencies": {
@@ -439,21 +405,6 @@
     }
   },
   "libraries": {
-    "CaseExtensions/1.1.0": {
-      "sha512": "zEvNeodNmNai8aQ4YfhHKCTWmlMwXM8NHR+8x8WsgY5eT4eDW0yFGrO+voQ1lCzyAXJ1Djv6dUAiyraVTueapA==",
-      "type": "package",
-      "path": "caseextensions/1.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "caseextensions.1.1.0.nupkg.sha512",
-        "caseextensions.nuspec",
-        "lib/net5.0/CaseExtensions.dll",
-        "lib/net5.0/CaseExtensions.runtimeconfig.json",
-        "lib/netstandard1.3/CaseExtensions.dll",
-        "lib/netstandard2.0/CaseExtensions.dll"
-      ]
-    },
     "EFCore.NamingConventions/6.0.0": {
       "sha512": "ij0Z59hA3hattuY+FFmfGhJwLmSw8uz/+01lMRnD5YOYJM7hN7JJUZ92U3rZL6nTJQL5xOf7Rt39zdeNSloImw==",
       "type": "package",
@@ -464,18 +415,6 @@
         "efcore.namingconventions.6.0.0.nupkg.sha512",
         "efcore.namingconventions.nuspec",
         "lib/net6.0/EFCore.NamingConventions.dll"
-      ]
-    },
-    "Marques.EFCorev3.0.SnakeCase/1.0.13": {
-      "sha512": "ebuK8N1GgjLEyQTIgLDXRw6txQJZtOVmgo/afXm5Wldh/fHC2R9jgU1O8X0ipdHhG7jrdXvcmIREB2pAbWQx9w==",
-      "type": "package",
-      "path": "marques.efcorev3.0.snakecase/1.0.13",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.1/Marques.EFCorev3.0.SnakeCase.dll",
-        "marques.efcorev3.0.snakecase.1.0.13.nupkg.sha512",
-        "marques.efcorev3.0.snakecase.nuspec"
       ]
     },
     "Microsoft.AspNetCore.JsonPatch/6.0.6": {
@@ -992,20 +931,6 @@
         "postgresql.png"
       ]
     },
-    "SnakeCase.JsonNet/1.4.1": {
-      "sha512": "E5NXn/qHWwDrYtnrf1wYrqj1BTfxulxwYqztWgFk0YaAn2fIThuyUBf9rUPETm1HP7On2CbzmmEy+O9+3FxciA==",
-      "type": "package",
-      "path": "snakecase.jsonnet/1.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/SnakeCase.JsonNet.dll",
-        "lib/netcoreapp2.2/SnakeCase.JsonNet.dll",
-        "lib/netstandard1.1/SnakeCase.JsonNet.dll",
-        "snakecase.jsonnet.1.4.1.nupkg.sha512",
-        "snakecase.jsonnet.nuspec"
-      ]
-    },
     "Swashbuckle.AspNetCore/6.2.3": {
       "sha512": "cnzQDn0Le+hInsw2SYwlOhOCPXpYi/szcvnyqZJ12v+QyrLBwAmWXBg6RIyHB18s/mLeywC+Rg2O9ndz0IUNYQ==",
       "type": "package",
@@ -1168,14 +1093,11 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "CaseExtensions >= 1.1.0",
       "EFCore.NamingConventions >= 6.0.0",
-      "Marques.EFCorev3.0.SnakeCase >= 1.0.13",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 6.0.6",
       "Newtonsoft.Json >= 13.0.1",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.4",
       "ProjetoHoteis.lib >= 1.0.0",
-      "SnakeCase.JsonNet >= 1.4.1",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -1222,17 +1144,9 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "CaseExtensions": {
-            "target": "Package",
-            "version": "[1.1.0, )"
-          },
           "EFCore.NamingConventions": {
             "target": "Package",
             "version": "[6.0.0, )"
-          },
-          "Marques.EFCorev3.0.SnakeCase": {
-            "target": "Package",
-            "version": "[1.0.13, )"
           },
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
@@ -1245,10 +1159,6 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[6.0.4, )"
-          },
-          "SnakeCase.JsonNet": {
-            "target": "Package",
-            "version": "[1.4.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
