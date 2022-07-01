@@ -15,28 +15,30 @@ public class TipoDeQuartoController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetTodos()
+    public async Task<IActionResult> GetTodosAsync()
     {
-        return Ok(_repositorio.BuscarTodos());
+        var resposta = await _repositorio.BuscarTodosAsync();
+        return Ok(resposta);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetPorId(int id)
+    public async Task<IActionResult> GetPorIdAsync(int id)
     {
-        return Ok(_repositorio.BuscarPorId(id));
+        var resposta = await _repositorio.BuscarPorIdAsync(id);
+        return Ok(resposta);
     }
 
     [HttpPost]
-    public IActionResult Salvar(TipoDeQuarto tipoDeQuarto)
+    public async Task<IActionResult> SalvarAsync(TipoDeQuarto tipo)
     {
-        _repositorio.Adicionar(tipoDeQuarto);
+        await _repositorio.AdicionarAsync(tipo);
         return Ok();
     }
 
     [HttpDelete]
-    public IActionResult DeletePorId(int id)
+    public async Task<IActionResult> DeletePorIdAsync(int id)
     {
-        _repositorio.Deletar(id);
+        await _repositorio.DeletarAsync(id);
         return Ok();
     }
 }

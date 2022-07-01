@@ -15,28 +15,30 @@ public class HospedeController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetTodos()
+    public async Task<IActionResult> GetTodosAsync()
     {
-        return Ok(_repositorio.BuscarTodos());
+        var resposta = await _repositorio.BuscarTodosAsync();
+        return Ok(resposta);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetPorId(int id)
+    public async Task<IActionResult> GetPorIdAsync(int id)
     {
-        return Ok(_repositorio.BuscarPorId(id));
+        var resposta = await _repositorio.BuscarPorIdAsync(id);
+        return Ok(resposta);
     }
 
     [HttpPost]
-    public IActionResult Salvar(Hospede hospede)
+    public async Task<IActionResult> SalvarAsync(Hospede hospede)
     {
-        _repositorio.Adicionar(hospede);
+        await _repositorio.AdicionarAsync(hospede);
         return Ok();
     }
 
     [HttpDelete]
-    public IActionResult DeletePorId(int id)
+    public async Task<IActionResult> DeletePorIdAsync(int id)
     {
-        _repositorio.Deletar(id);
+        await _repositorio.DeletarAsync(id);
         return Ok();
     }
 }

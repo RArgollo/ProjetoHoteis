@@ -18,33 +18,33 @@ public class HotelController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetTodos()
+    public async Task<IActionResult> GetTodosAsync()
     {
-        return Ok(_repositorio.BuscarTodos());
+        return Ok(await _repositorio.BuscarTodosAsync());
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetPorId(int id)
+    public async Task<IActionResult> GetPorIdAsync(int id)
     {
-        return Ok(_repositorio.BuscarPorId(id));
+        return Ok(await _repositorio.BuscarPorIdAsync(id));
     }
 
     [HttpPost]
-    public IActionResult Salvar(Hotel hotel)
+    public async Task<IActionResult> SalvarAsync(Hotel hotel)
     {
-        _repositorio.Adicionar(hotel);
+        await _repositorio.AdicionarAsync(hotel);
         return Ok();
     }
 
     [HttpDelete]
-    public IActionResult DeletePorId(int id)
+    public async Task<IActionResult> DeletePorIdAsync(int id)
     {
-        _repositorio.Deletar(id);
+        await _repositorio.DeletarAsync(id);
         return Ok();
     }
 
     [HttpGet("CEP")]
-    public async Task<IActionResult> GetCEP(string cep)
+    public async Task<IActionResult> GetCEPAsync(string cep)
     {
         var client = new HttpClient();
         var response = await client.GetAsync($"https://viacep.com.br/ws/{cep}/json/");

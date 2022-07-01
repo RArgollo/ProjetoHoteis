@@ -15,28 +15,30 @@ public class QuartoController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetTodos()
+    public async Task<IActionResult> GetTodosAsync()
     {
-        return Ok(_repositorio.BuscarTodos());
+        var resposta = await _repositorio.BuscarTodosAsync();
+        return Ok(resposta);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetPorId(int id)
+    public async Task<IActionResult> GetPorIdAsync(int id)
     {
-        return Ok(_repositorio.BuscarPorId(id));
+        var resposta = await _repositorio.BuscarPorIdAsync(id);
+        return Ok(resposta);
     }
 
     [HttpPost]
-    public IActionResult Salvar(Quarto quarto)
+    public async Task<IActionResult> SalvarAsync(Quarto quarto)
     {
-        _repositorio.Adicionar(quarto);
+        await _repositorio.AdicionarAsync(quarto);
         return Ok();
     }
 
     [HttpDelete]
-    public IActionResult DeletePorId(int id)
+    public async Task<IActionResult> DeletePorIdAsync(int id)
     {
-        _repositorio.Deletar(id);
+        await _repositorio.DeletarAsync(id);
         return Ok();
     }
 }
